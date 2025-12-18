@@ -26,8 +26,6 @@ int main(){
     “Ama pointer gibi nesne değildir”
     */
 
-#include <iostream>
-#include <memory>
 
     // Ortak bir işaretçi oluşturma
     std::shared_ptr<int> p1 = std::make_shared<int>(100);{
