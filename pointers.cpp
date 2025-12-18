@@ -25,4 +25,25 @@ int main(){
     “Reference pointer gibi erişim sağlar”
     “Ama pointer gibi nesne değildir”
     */
+
+#include <iostream>
+#include <memory>
+
+    // Ortak bir işaretçi oluşturma
+    std::shared_ptr<int> p1 = std::make_shared<int>(100);{
+        std::shared_ptr<int> p2 = p1; // Kopyaladık! Sayaç: 2 oldu.
+        std::cout << "P2 icindeki deger: " << *p2 << std::endl;
+        std::cout << "Kullanim sayisi: " << p1.use_count() << std::endl; // 2 basar
+    } 
+    // p2 burada ölür. Sayaç: 1'e düşer. Bellek SİLİNMEZ çünkü p1 hala ona bakıyor.
+
+    std::cout << "Kullanim sayisi: " << p1.use_count() << std::endl; // 1 basar
+    return 0;
+ // p1 ölür. Sayaç: 0 olur. Bellek şimdi temizlenir.
+
+
+auto lambda_fonskiyonu = []() { std::cout << "Merhaba"; };
+// Fonksiyonu bir değişken gibi saklayabilir veya doğrudan bir yere parametre olarak verebilirsin.
+
+
 }
