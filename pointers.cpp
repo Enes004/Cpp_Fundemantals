@@ -9,12 +9,12 @@ int main(){
 
     const int *a = &x; //cant change the value
     int const *b = &x; // cant change address
-    const int const &x; // cant change anything
+    const int const *c = &x; // cant change anything
     return 0;
 
     //Reference
-    int x = 10;
-    int& r = x;
+    int z = 10;
+    int& r = z;
     /*
     Reference adres tutmaz,
     Reference başka bir değişken değildir,
