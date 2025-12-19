@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <memory>
 
 class BattleBot {
     protected:
@@ -79,17 +80,15 @@ class TankBot : public BattleBot{
 
 
 int main() {
-    TankBot tank1("Panzer", 200, 50);
+    std::shared_ptr<BattleBot> Bot1 = std::make_shared<TankBot>("AkilliTank",200,50);
+    Bot1->attack();
 
-    // POLYMORPHISM TESTİ
-    // Tankı, genel bir Robot pointer'ı ile tutuyoruz.
-    BattleBot* genelRobot = &tank1;
-
-    std::cout << "\n--- POINTER UZERINDEN SALDIRI ---" << std::endl;
+   std::cout << "\n--- KOPYALAMA TESTI ---" << std::endl;
     
-    // Eğer 'virtual' yazdıysan "Top Atisi" yazar.
-    // Yazmadıysan "Standart Saldiri" yazar.
-    genelRobot->attack(); 
+{
+    std::shared_ptr<BattleBot> Bot2 = Bot1;
+    Bot2->attack();
+}
 
     return 0;
 }
