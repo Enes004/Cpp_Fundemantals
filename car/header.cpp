@@ -1,5 +1,5 @@
-#ifndef HEADER_CPP  //include guard
-#define HEADER_CPP
+#ifndef HEADER_HPP  //include guard
+#define HEADER_HPP
 
 class Calculator{
 public:
