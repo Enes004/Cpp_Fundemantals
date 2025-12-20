@@ -1,14 +1,14 @@
-#ifndef HEADER.CPP  //include guard
-#define HEADER.CPP
+#ifndef HEADER_CPP  //include guard
+#define HEADER_CPP
 
 class Calculator{
 public:
 Calculator();
-void add(int a ,int b);
-void minus(int a , int b);
+int add(int a ,int b);
+int minus(int a , int b);
 
 };
 
 
 
-#ifdef
+#endif
